@@ -56,7 +56,7 @@ There are 11 Instagram reels in `/videos/`, re-encoded to 720p H.264 (about 97 M
 - Live: https://alvin659.github.io/d-dynamic-fitness/
 - To update it after editing, rebuild for the Pages address, then push:
   ```
-  SITE_URL=https://alvin659.github.io/d-dynamic-fitness BASE_PATH=/d-dynamic-fitness/ python build.py
+  MSYS_NO_PATHCONV=1 SITE_URL=https://alvin659.github.io/d-dynamic-fitness BASE_PATH=/d-dynamic-fitness/ python build.py
   git add -A && git commit -m "Update site" && git push
   ```
 - When the real domain is ready, set `site_url` in `build.py`, run `python build.py` without the overrides, and point the domain at the host.

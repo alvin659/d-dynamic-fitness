@@ -60,7 +60,7 @@ for k, v in CATEGORY_IMG.items():
 SERVICES = [_all[k] for k in ORDER]
 SVC = {s["slug"]: s for s in SERVICES}
 
-AREA_ADD = {"westlands": "gym-training", "kilimani": "aerobics-cardio", "kileleshwa": "kids-teens-fitness",
+AREA_ADD = {"westlands": "fitness-training", "kilimani": "aerobics-cardio", "kileleshwa": "kids-teens-fitness",
             "lavington": "weight-loss-training", "karen": "group-fitness", "parklands": "mma-training"}
 AREA_VIDEO = {"westlands": "shadow", "kilimani": "one_arm", "kileleshwa": "jkd_kicks",
               "lavington": "squats", "karen": "gym_endurance", "parklands": "partner"}
@@ -72,7 +72,8 @@ for a in content.AREAS:
     a["faqs"] = a["faqs"] + AREA_EXTRA[a["slug"]]["faqs"]
     AREAS.append(a)
 
-LOGO_SVG = open(os.path.join(OUT, "assets", "logo-mark.svg"), encoding="utf-8").read().replace('role="img"', 'aria-hidden="true"')
+def logo_img(root, cls="brand-mark"):
+    return f'<img class="{cls}" src="{root}assets/logo-mark-160.png" alt="" width="80" height="80" aria-hidden="true">'
 
 
 def wa_link(text="Hi Coach Don, I'd like to book a training session."):
@@ -118,10 +119,10 @@ def business_schema():
         "@type": ["LocalBusiness", "SportsActivityLocation"],
         "@id": business_id(),
         "name": B["name"],
-        "description": "Certified personal trainer in Nairobi offering personal training, gym and weight training, MMA, aerobics, Jeet Kune Do, boxing fitness, calisthenics, weight loss, group classes and kids martial arts.",
+        "description": "Certified personal trainer in Nairobi offering personal training, fitness and weight training, MMA, aerobics, Jeet Kune Do, boxing fitness, calisthenics, weight loss, group classes and kids martial arts.",
         "url": B["site_url"] + "/",
         "image": [abs_url("images/" + IMG[k][0]) for k in ("portrait", "kick", "squat")],
-        "logo": abs_url("assets/logo-mark-512.png"),
+        "logo": abs_url("assets/logo-mark.png"),
         "telephone": B["phone_e164"],
         "email": B["email"],
         "address": {
@@ -243,12 +244,12 @@ def head(title, meta, path, root, schema_nodes, og_img=None):
 <meta name="twitter:title" content="{escape(title)}">
 <meta name="twitter:description" content="{escape(meta)}">
 <meta name="twitter:image" content="{og_url}">
-<meta name="theme-color" content="#0e0f11">
-<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#04101a">
+<link rel="icon" href="{root}assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{root}assets/style.css">
 {jsonld(schema_nodes)}
 </head>
@@ -257,8 +258,8 @@ def head(title, meta, path, root, schema_nodes, og_img=None):
 
 
 def logo(root):
-    return (f'<a class="brand" href="{root}index.html" aria-label="{B["name"]} home">{LOGO_SVG}'
-            f'<span class="brand-text"><span class="brand-name">Dynamic<b>Fitness</b></span><span class="brand-tag">Nairobi &middot; Coach Don</span></span></a>')
+    return (f'<a class="brand" href="{root}index.html" aria-label="{B["name"]} home">{logo_img(root)}'
+            f'<span class="brand-text"><span class="brand-name">D-Dynamic</span><span class="brand-tag">Fitness</span></span></a>')
 
 
 def header(root, active=""):
@@ -308,7 +309,7 @@ def footer(root):
  <div class="wrap foot-grid">
   <div class="nap">
    {logo(root)}
-   <p class="foot-desc">Certified {B['category']} in {B['city']}. Personal training, gym, MMA, aerobics and martial arts with Coach {B['coach']}.</p>
+   <p class="foot-desc">Certified {B['category']} in {B['city']}. Personal training, fitness, MMA, aerobics and martial arts with Coach {B['coach']}.</p>
    <address>
     <strong>{B['name']}</strong><br>
     <span>{escape(address_line())}</span><br>
@@ -379,9 +380,9 @@ def marquee():
 # ---------------------------------------------------------------- pages
 def page_home():
     root = ""
-    title = (f"BEST Personal Trainer Nairobi | If you're looking for Gym Training, MMA, Aerobics, Calisthenics & Jeet Kune Do near me, "
+    title = (f"BEST Personal Trainer Nairobi | If you're looking for Fitness Training, MMA, Aerobics, Calisthenics & Jeet Kune Do near me, "
              f"{B['name']} with Coach {B['coach']} is the place to be")
-    meta = ("Certified personal trainer in Nairobi. Gym and weight training, MMA, aerobics, boxing, calisthenics, weight loss "
+    meta = ("Certified personal trainer in Nairobi. Fitness and weight training, MMA, aerobics, boxing, calisthenics, weight loss "
             "and kids martial arts with Coach Don Michael Ondiro. Book on WhatsApp.")
     general_faqs = FAQS[:5]
     showcase = ["squats", "mma_speed", "one_arm", "jkd_kicks"]
@@ -401,13 +402,13 @@ def page_home():
   <div class="hero-copy">
    <p class="eyebrow">Certified Fitness &amp; Performance Coach &middot; Nairobi</p>
    <h1>Personal Trainer in Nairobi</h1>
-   <p class="lead">Personal training, gym work, MMA, aerobics and martial arts with Coach {B['coach']}. One coach, a plan built for you, and sessions that move you forward every week.</p>
+   <p class="lead">Personal training, fitness, MMA, aerobics and martial arts with Coach {B['coach']}. One coach, a plan built for you, and sessions that move you forward every week.</p>
    <div class="hero-btns"><a class="btn" href="{wa_link()}" target="_blank" rel="noopener">Book on WhatsApp</a><a class="btn btn-ghost" href="#categories">See Training</a></div>
    <ul class="hero-stats"><li><b>12</b> training categories</li><li><b>6</b> Nairobi areas</li><li><b>JKD</b> &amp; MMA trained</li></ul>
   </div>
   <div class="hero-media">
    <div class="phone"><video autoplay muted loop playsinline preload="metadata" poster="videos/mma-striking-speed-drill-nairobi.jpg" aria-label="Coach Don MMA striking drill"><source src="videos/hero-loop-vertical.mp4" type="video/mp4"></video></div>
-   <div class="badge-float">{LOGO_SVG}<span><b>Coach Don</b>Certified &middot; JKD &middot; MMA</span></div>
+   <div class="badge-float">{logo_img(root, "badge-mark")}<span><b>Coach Don</b>Certified &middot; JKD &middot; MMA</span></div>
   </div>
  </div>
 </section>
@@ -415,7 +416,7 @@ def page_home():
 
 <section class="section" id="categories">
  <div class="wrap">
-  <div class="section-head split-head"><div><p class="eyebrow">Training Categories</p><h2>Gym, MMA, Aerobics &amp; More in Nairobi</h2></div><p>Pick a goal. Each one has its own plan and videos.</p></div>
+  <div class="section-head split-head"><div><p class="eyebrow">Training Categories</p><h2>Fitness, MMA, Aerobics &amp; More in Nairobi</h2></div><p>Pick a goal. Each one has its own plan and videos.</p></div>
   <div class="cat-grid">{cards}</div>
  </div>
 </section>
@@ -438,7 +439,7 @@ def page_home():
    <h2>Meet {B['coach']}</h2>
    <p>Don is a certified fitness and performance coach, a Jeet Kune Do and leisure MMA martial artist, and holds a BA in Economics. His students call him Sensei.</p>
    <p>His rule for training: repetition breeds mastery. Use your space, anywhere and anytime. You can see it on his Instagram, from one-arm push-ups to 100 push-ups a day.</p>
-   <ul class="ticks"><li>Certified fitness and performance coach</li><li>Jeet Kune Do and MMA</li><li>Gym, calisthenics and conditioning</li></ul>
+   <ul class="ticks"><li>Certified fitness and performance coach</li><li>Jeet Kune Do and MMA</li><li>Fitness, calisthenics and conditioning</li></ul>
    <a class="btn btn-ghost" href="about.html">About Don</a>
   </div>
  </div>
@@ -516,7 +517,7 @@ def page_about():
     <li>Jeet Kune Do martial artist</li>
     <li>Leisure MMA training</li>
     <li>BA in Economics</li>
-    <li>Coaching clients in personal training, gym, MMA, aerobics, calisthenics and strength</li>
+    <li>Coaching clients in personal training, fitness, MMA, aerobics, calisthenics and strength</li>
    </ul>
    <p>Ready to start? Explore our <a href="services/index.html">training categories in Nairobi</a>, watch <a href="videos.html">Don's training videos</a> or see the <a href="areas/index.html">areas we serve</a>.</p>
   </div>
@@ -529,18 +530,18 @@ def page_about():
 
 def page_services_index():
     root = "../"
-    title = f"BEST Personal Training Services Nairobi | Gym, MMA, Aerobics, Boxing, Calisthenics, Weight Loss & Kids Martial Arts near me | {B['name']}"
-    meta = "All training categories at D Dynamic Fitness in Nairobi: personal training, gym, MMA, aerobics, Jeet Kune Do, boxing, calisthenics, weight loss, group and kids classes."
+    title = f"BEST Personal Training Services Nairobi | Fitness, MMA, Aerobics, Boxing, Calisthenics, Weight Loss & Kids Martial Arts near me | {B['name']}"
+    meta = "All training categories at D Dynamic Fitness in Nairobi: personal training, fitness, MMA, aerobics, Jeet Kune Do, boxing, calisthenics, weight loss, group and kids classes."
     crumbs = [("Home", ""), ("Training", "services/index.html")]
     schema = [business_schema(), breadcrumb_schema(crumbs),
               {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": abs_url(f"services/{s['slug']}.html"), "name": s["name"]} for i, s in enumerate(SERVICES)]}]
     cards = "".join(service_card(s, root) for s in SERVICES)
     body = f"""{crumbs_html(crumbs, root)}
-<section class="page-hero"><div class="wrap"><h1>Training Categories in Nairobi</h1><p class="lead">Gym, MMA, aerobics, martial arts and more. Find the programme that fits your goal.</p><div class="cats cats-sm">{category_tiles(root)}</div></div></section>
+<section class="page-hero"><div class="wrap"><h1>Training Categories in Nairobi</h1><p class="lead">Fitness, MMA, aerobics, martial arts and more. Find the programme that fits your goal.</p><div class="cats cats-sm">{category_tiles(root)}</div></div></section>
 <section class="section"><div class="wrap"><div class="cat-grid">{cards}</div></div></section>
 <section class="section alt"><div class="wrap narrow">
  <h2>Not sure which category is right for you?</h2>
- <p>Most clients combine two programmes, for example <a href="gym-training.html">gym training</a> with <a href="aerobics-cardio.html">aerobics</a>, or <a href="mma-training.html">MMA</a> with <a href="strength-conditioning.html">strength and conditioning</a>. Message Coach Don on WhatsApp with your goal and he will recommend a plan. We train clients across Nairobi; see <a href="../areas/index.html">all areas we serve</a>.</p>
+ <p>Most clients combine two programmes, for example <a href="fitness-training.html">fitness training</a> with <a href="aerobics-cardio.html">aerobics</a>, or <a href="mma-training.html">MMA</a> with <a href="strength-conditioning.html">strength and conditioning</a>. Message Coach Don on WhatsApp with your goal and he will recommend a plan. We train clients across Nairobi; see <a href="../areas/index.html">all areas we serve</a>.</p>
 </div></section>
 """
     write("services/index.html", head(title, meta, "services/index.html", root, schema) + header(root, "services") + body + footer(root))
@@ -605,7 +606,7 @@ def page_service(s):
 def page_areas_index():
     root = "../"
     title = f"Areas We Serve | BEST Personal Trainer in Westlands, Kilimani, Kileleshwa, Lavington, Karen & Parklands, Nairobi | {B['name']}"
-    meta = "D Dynamic Fitness provides personal training, gym, MMA and aerobics coaching across Nairobi: Westlands, Kilimani, Kileleshwa, Lavington, Karen and Parklands."
+    meta = "D Dynamic Fitness provides personal training, fitness, MMA and aerobics coaching across Nairobi: Westlands, Kilimani, Kileleshwa, Lavington, Karen and Parklands."
     crumbs = [("Home", ""), ("Areas We Serve", "areas/index.html")]
     schema = [business_schema(), breadcrumb_schema(crumbs)]
     tiles = "".join(f"""<a class="area-tile" href="{a['slug']}.html"><h3>{a['name']}</h3><p>Near {a['landmarks']}</p><span>Personal training in {a['name']} &rarr;</span></a>""" for a in AREAS)
@@ -657,7 +658,7 @@ def page_area(a):
    <ul class="ticks">
     <li>Certified fitness and performance coach with martial arts experience</li>
     <li>Programmes built around your goal, schedule and current fitness</li>
-    <li>Gym, MMA, aerobics, calisthenics and Jeet Kune Do under one coach</li>
+    <li>Fitness, MMA, aerobics, calisthenics and Jeet Kune Do under one coach</li>
     <li>Simple nutrition guidance using food you already eat</li>
     <li>Fast replies on WhatsApp to book and reschedule</li>
    </ul>
@@ -682,8 +683,8 @@ def page_area(a):
 
 def page_videos():
     root = ""
-    title = f"Training Videos | Watch MMA, Jeet Kune Do, Calisthenics & Gym Workouts with a Nairobi Personal Trainer | {B['name']}"
-    meta = "Watch Coach Don Michael Ondiro's training videos from Nairobi: MMA striking, Jeet Kune Do kicks, one-arm push-ups, gym workouts and partner challenges."
+    title = f"Training Videos | Watch MMA, Jeet Kune Do, Calisthenics & Fitness Workouts with a Nairobi Personal Trainer | {B['name']}"
+    meta = "Watch Coach Don Michael Ondiro's training videos from Nairobi: MMA striking, Jeet Kune Do kicks, one-arm push-ups, fitness workouts and partner challenges."
     crumbs = [("Home", ""), ("Videos", "videos.html")]
     schema = [business_schema(), breadcrumb_schema(crumbs)] + [video_schema(k) for k in VIDEOS]
     groups = ""
@@ -703,8 +704,8 @@ def page_videos():
 
 def page_gallery():
     root = ""
-    title = f"Training Gallery | Personal Trainer Nairobi Photos: Gym, MMA, Calisthenics & Boxing | {B['name']}"
-    meta = "Photos from D Dynamic Fitness training sessions in Nairobi: gym training, MMA and boxing pad work, calisthenics, Jeet Kune Do and mobility."
+    title = f"Training Gallery | Personal Trainer Nairobi Photos: Fitness, MMA, Calisthenics & Boxing | {B['name']}"
+    meta = "Photos from D Dynamic Fitness training sessions in Nairobi: fitness training, MMA and boxing pad work, calisthenics, Jeet Kune Do and mobility."
     crumbs = [("Home", ""), ("Gallery", "gallery.html")]
     schema = [business_schema(), breadcrumb_schema(crumbs),
               {"@type": "ImageGallery", "name": "D Dynamic Fitness training gallery", "url": abs_url("gallery.html"),
@@ -719,8 +720,8 @@ def page_gallery():
 
 def page_faq():
     root = ""
-    title = f"FAQ | Personal Training in Nairobi: Prices, Booking, Gym, MMA, Aerobics & Areas | {B['name']}"
-    meta = "Answers to common questions about training with D Dynamic Fitness in Nairobi: booking, gym, MMA, aerobics, kids classes, areas, beginners and pricing."
+    title = f"FAQ | Personal Training in Nairobi: Prices, Booking, Fitness, MMA, Aerobics & Areas | {B['name']}"
+    meta = "Answers to common questions about training with D Dynamic Fitness in Nairobi: booking, fitness, MMA, aerobics, kids classes, areas, beginners and pricing."
     crumbs = [("Home", ""), ("FAQ", "faq.html")]
     all_faqs = FAQS + [f for s in SERVICES for f in s["faqs"][:1]]
     schema = [business_schema(), breadcrumb_schema(crumbs), faq_schema(all_faqs)]

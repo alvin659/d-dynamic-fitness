@@ -5,7 +5,7 @@
 IMG = {
     "portrait": ("don-michael-ondiro-personal-trainer-nairobi.jpg", "Don Michael Ondiro, certified personal trainer in Nairobi, smiling in the gym", 1200, 1200),
     "coach": ("coach-don-michael-ondiro-gym-nairobi.jpg", "Coach Don Michael Ondiro in a Nairobi gym", 1200, 1200),
-    "curl": ("dumbbell-curl-gym-training-nairobi.jpg", "Dumbbell curl during gym and weight training in Nairobi", 1200, 1200),
+    "curl": ("dumbbell-curl-fitness-training-nairobi.jpg", "Dumbbell curl during fitness and weight training in Nairobi", 1200, 1200),
     "mma_img": ("mma-training-striking-drill-nairobi.jpg", "MMA striking drill during a training session in Nairobi", 720, 1280),
     "boxing_img": ("boxing-shadow-boxing-workout-nairobi.jpg", "Rooftop shadow boxing workout in Nairobi", 720, 1280),
     "hundred_img": ("weight-loss-push-up-challenge-nairobi.jpg", "Push-up challenge for fat loss and fitness in Nairobi", 720, 1280),
@@ -26,7 +26,7 @@ GALLERY = ["portrait", "curl", "kick", "squat", "onearm", "pads", "coach", "mobi
 
 # Main image for each training category
 CATEGORY_IMG = {
-    "personal-training": "coach", "gym-training": "curl", "mma-training": "mma_img", "aerobics-cardio": "shadow",
+    "personal-training": "coach", "fitness-training": "curl", "mma-training": "mma_img", "aerobics-cardio": "shadow",
     "jeet-kune-do-martial-arts": "kick", "boxing-kickboxing-fitness": "boxing_img", "calisthenics-training": "onearm",
     "weight-loss-training": "rooftop", "strength-conditioning": "squat", "group-fitness": "partner",
     "kids-teens-fitness": "pads", "mobility-flexibility": "mobility",
@@ -385,7 +385,7 @@ AREAS = [
 FAQS = [
     ("Who is the coach at D Dynamic Fitness?", "D Dynamic Fitness is run by Don Michael Ondiro, a certified fitness and performance coach in Nairobi who also trains in Jeet Kune Do and MMA. He holds a BA in Economics."),
     ("Where in Nairobi do you train clients?", "D Dynamic Fitness works with clients across Nairobi, including Westlands, Kilimani, Kileleshwa, Lavington, Karen and Parklands. Message on WhatsApp with your location to confirm."),
-    ("What services do you offer?", "One-on-one personal training, gym and weight training, MMA training, aerobics and cardio classes, Jeet Kune Do, boxing and kickboxing fitness, calisthenics, weight loss coaching, strength and conditioning, group and partner classes, kids and teens fitness, and mobility training."),
+    ("What services do you offer?", "One-on-one personal training, fitness and weight training, MMA training, aerobics and cardio classes, Jeet Kune Do, boxing and kickboxing fitness, calisthenics, weight loss coaching, strength and conditioning, group and partner classes, kids and teens fitness, and mobility training."),
     ("I'm a complete beginner. Is that okay?", "Yes. Every programme starts with an assessment and is built from your current fitness level. Beginners are very welcome."),
     ("How do I book a session?", "Tap the WhatsApp or Call button on any page, or use the contact form. Tell us your goal, location and preferred times, and we will reply to arrange your first session."),
     ("Do you offer online coaching?", "Ask on WhatsApp about remote programmes and check-ins if you can't train in person."),

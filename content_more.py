@@ -1,4 +1,4 @@
-# New service categories (MMA, gym, weight loss, group fitness) and the video library.
+# New service categories (MMA, fitness, weight loss, group fitness) and the video library.
 # Videos are Coach Don's own Instagram reels, re-encoded for the web.
 
 # key: (file stem in /videos, title, description, upload date, ISO duration, orientation)
@@ -27,7 +27,7 @@ VIDEOS = {
     "hundred": ("100-push-up-challenge-nairobi", "0 to 100 push-up challenge",
                 "100 push-ups a day keeps your weakness away. Coach Don takes on the 0 to 100 push-up challenge.",
                 "2026-09-23", "PT57S", "v"),
-    "gym_vars": ("gym-push-up-variations-challenge-nairobi", "Gym push-up challenge: only one person can do this",
+    "gym_vars": ("gym-push-up-variations-challenge-nairobi", "Push-up challenge: only one person can do this",
                  "Advanced push-up and dumbbell variations performed in a Nairobi gym. Another day, another push-up.",
                  "2026-05-19", "PT39S", "v"),
     "gym_endurance": ("gym-strength-endurance-workout-nairobi", "Strength and endurance gym workout",
@@ -42,7 +42,7 @@ VIDEOS = {
 # footage yet (kids, mobility) use photos only until the client sends videos.
 VIDEO_FOR = {
     "personal-training": ["squats", "gym_endurance"],
-    "gym-training": ["squats", "gym_vars"],
+    "fitness-training": ["squats", "gym_vars"],
     "mma-training": ["mma_speed", "mma_pads"],
     "aerobics-cardio": ["shadow"],
     "jeet-kune-do-martial-arts": ["jkd_kicks"],
@@ -56,14 +56,14 @@ VIDEO_FOR = {
 }
 # Primary category for each video (used for the label on the Videos page)
 VIDEO_CATEGORY = {
-    "squats": "gym-training", "mma_speed": "mma-training", "mma_pads": "boxing-kickboxing-fitness",
+    "squats": "fitness-training", "mma_speed": "mma-training", "mma_pads": "boxing-kickboxing-fitness",
     "jkd_kicks": "jeet-kune-do-martial-arts", "shadow": "aerobics-cardio", "one_arm": "calisthenics-training",
-    "variations": "calisthenics-training", "hundred": "weight-loss-training", "gym_vars": "gym-training",
+    "variations": "calisthenics-training", "hundred": "weight-loss-training", "gym_vars": "fitness-training",
     "gym_endurance": "strength-conditioning", "partner": "group-fitness",
 }
 
 # Display order of all categories (existing + new)
-ORDER = ["personal-training", "gym-training", "mma-training", "aerobics-cardio", "jeet-kune-do-martial-arts",
+ORDER = ["personal-training", "fitness-training", "mma-training", "aerobics-cardio", "jeet-kune-do-martial-arts",
          "boxing-kickboxing-fitness", "calisthenics-training", "weight-loss-training", "strength-conditioning",
          "group-fitness", "kids-teens-fitness", "mobility-flexibility"]
 
@@ -136,22 +136,22 @@ NEW_SERVICES = [
         ],
     },
     {
-        "slug": "gym-training",
-        "name": "Gym & Weight Training",
-        "short": "Gym Training",
-        "kw": "gym trainer Nairobi",
+        "slug": "fitness-training",
+        "name": "Fitness & Weight Training",
+        "short": "Fitness Training",
+        "kw": "fitness trainer Nairobi",
         "img": "core",
         "icon": "dumbbell",
-        "blurb": "Learn to use the gym with confidence: free weights, machines and structured programmes for muscle and strength.",
-        "title": "BEST Gym Trainer Nairobi | Weight Training, Muscle Building & Gym Workout Programmes near me at D Dynamic Fitness",
-        "meta": "Gym and weight training coach in Nairobi. Learn proper lifting technique, build muscle and get stronger with structured gym programmes from coach Don Michael Ondiro.",
-        "h1": "Gym Trainer in Nairobi: Weight Training & Muscle Building",
+        "blurb": "Get fitter and stronger with free weights, machines and structured programmes for muscle and strength.",
+        "title": "BEST Fitness Trainer Nairobi | Weight Training, Muscle Building & Fitness Programmes near me at D Dynamic Fitness",
+        "meta": "Fitness and weight training coach in Nairobi. Learn proper lifting technique, build muscle and get stronger with structured fitness programmes from coach Don Michael Ondiro.",
+        "h1": "Fitness Trainer in Nairobi: Weight Training & Muscle Building",
         "intro": [
-            "Training in a gym without a plan wastes your membership. Machines you are not sure how to use, a crowded free-weights area and random workouts that never seem to change anything. Gym training with D Dynamic Fitness fixes that.",
-            "Coach Don Michael Ondiro teaches you how to train properly in the gym: the right exercises, the right technique and a programme that progresses every week. You will know what you did in every session and why.",
+            "Training in a gym without a plan wastes your membership. Machines you are not sure how to use, a crowded free-weights area and random workouts that never seem to change anything. Fitness training with D Dynamic Fitness fixes that.",
+            "Coach Don Michael Ondiro teaches you how to train properly: the right exercises, the right technique and a programme that progresses every week. You will know what you did in every session and why.",
         ],
         "sections": [
-            ("What gym training includes", """
+            ("What fitness training includes", """
 <ul>
 <li><strong>Gym orientation:</strong> how to use free weights, cables and machines safely.</li>
 <li><strong>Technique coaching</strong> on the key lifts: squat, deadlift, bench press, overhead press, rows and pull-ups.</li>
@@ -159,9 +159,9 @@ NEW_SERVICES = [
 <li><strong>Muscle-building principles:</strong> volume, intensity, tempo and recovery explained simply.</li>
 <li><strong>Gym etiquette and confidence:</strong> so the weights room never feels intimidating again.</li>
 </ul>"""),
-            ("Watch: squats and gym work", """
-<p>The first video is a real client session: squats with progressive overload, starting with the 20 kg bar and adding weight set by set while Don coaches her form. The second is Don's own gym work with push-up and dumbbell variations.</p>"""),
-            ("A sample 4-day gym split", """
+            ("Watch: squats and strength work", """
+<p>The first video is a real client session: squats with progressive overload, starting with the 20 kg bar and adding weight set by set while Don coaches her form. The second is Don's own training with push-up and dumbbell variations.</p>"""),
+            ("A sample 4-day training split", """
 <table>
 <thead><tr><th>Day</th><th>Focus</th><th>Example exercises</th></tr></thead>
 <tbody>
@@ -173,7 +173,7 @@ NEW_SERVICES = [
 </table>
 <p>Your programme is built around how many days you can train. Two or three full-body sessions a week work very well for most people.</p>"""),
             ("How progressive overload works", """
-<p>Muscles grow and get stronger when they are asked to do a little more over time. That is progressive overload, and it is the single most important principle in gym training. Your programme builds it in through:</p>
+<p>Muscles grow and get stronger when they are asked to do a little more over time. That is progressive overload, and it is the single most important principle in fitness training. Your programme builds it in through:</p>
 <ol>
 <li>Adding a small amount of weight when you hit your target reps.</li>
 <li>Adding reps or sets at the same weight.</li>
@@ -181,7 +181,7 @@ NEW_SERVICES = [
 <li>Reducing rest periods for conditioning blocks.</li>
 </ol>
 <p>Every session is logged, so you can see your numbers climb week after week.</p>"""),
-            ("Common gym mistakes we fix", """
+            ("Common training mistakes we fix", """
 <ul>
 <li><strong>Ego lifting:</strong> too much weight, poor form, high injury risk.</li>
 <li><strong>Program hopping:</strong> changing workouts every week so nothing progresses.</li>
@@ -190,8 +190,8 @@ NEW_SERVICES = [
 <li><strong>Not eating enough protein</strong> to recover and build muscle.</li>
 </ul>"""),
             ("Gym training plus the rest of your week", """
-<p>Gym training combines well with other services. Add <a href="{root}services/calisthenics-training.html">calisthenics</a> for relative strength, <a href="{root}services/mobility-flexibility.html">mobility training</a> to lift in better positions, or <a href="{root}services/weight-loss-training.html">weight loss coaching</a> if fat loss is your main goal. We train gym clients across Nairobi, including <a href="{root}areas/westlands.html">Westlands</a> and <a href="{root}areas/kilimani.html">Kilimani</a>.</p>"""),
-            ("Checklist for your first gym session", """
+<p>Gym training combines well with other services. Add <a href="{root}services/calisthenics-training.html">calisthenics</a> for relative strength, <a href="{root}services/mobility-flexibility.html">mobility training</a> to lift in better positions, or <a href="{root}services/weight-loss-training.html">weight loss coaching</a> if fat loss is your main goal. We train fitness clients across Nairobi, including <a href="{root}areas/westlands.html">Westlands</a> and <a href="{root}areas/kilimani.html">Kilimani</a>.</p>"""),
+            ("Checklist for your first session", """
 <ul class="ticks">
 <li>Comfortable training clothes and supportive trainers</li>
 <li>Water bottle and a small towel</li>
@@ -204,7 +204,7 @@ NEW_SERVICES = [
             ("Do I need a gym membership to train with you?", "It depends on where you want to train. Message on WhatsApp with your location and we will advise the best set-up for gym-based sessions."),
             ("How long does it take to build muscle?", "Most beginners notice strength gains within a few weeks and visible muscle changes within two to three months of consistent training and good nutrition."),
             ("Will lifting weights make women bulky?", "No. Weight training helps women build strength and a toned shape. Getting bulky takes years of very specific training and eating."),
-            ("Can you write me a gym programme to follow on my own?", "Yes. Programmes can combine a few coached sessions with workouts you do on your own, with regular check-ins to adjust the plan."),
+            ("Can you write me a fitness programme to follow on my own?", "Yes. Programmes can combine a few coached sessions with workouts you do on your own, with regular check-ins to adjust the plan."),
         ],
     },
     {
@@ -372,7 +372,7 @@ NEW_SERVICES = [
 <li><strong>Cool-down (5 min):</strong> slow walking and stretching.</li>
 </ol>"""),
             ("Aerobics for every level", """
-<p>Every movement has an easier and a harder option. Beginners start with low-impact versions and longer rests; regulars add jumps, speed and shorter rests. If you are new to exercise or managing a health condition, tell your coach so the session can be adjusted. For best results, combine cardio with <a href="{root}services/gym-training.html">gym and weight training</a> to keep muscle while you burn fat.</p>"""),
+<p>Every movement has an easier and a harder option. Beginners start with low-impact versions and longer rests; regulars add jumps, speed and shorter rests. If you are new to exercise or managing a health condition, tell your coach so the session can be adjusted. For best results, combine cardio with <a href="{root}services/fitness-training.html">fitness and weight training</a> to keep muscle while you burn fat.</p>"""),
             ("Group aerobics and cardio", """
 <p>Cardio sessions work brilliantly in a group: the energy is contagious. Ask about <a href="{root}services/group-fitness.html">group and partner sessions</a> for friends, church groups or office teams. Aimed at fat loss? See our <a href="{root}services/weight-loss-training.html">weight loss programme</a>. We run cardio sessions for clients across Nairobi, including <a href="{root}areas/kilimani.html">Kilimani</a> and <a href="{root}areas/westlands.html">Westlands</a>.</p>"""),
             ("Tips for your first aerobics class", """
@@ -451,7 +451,7 @@ NEW_SERVICES = [
 # Icons for each service card (inline SVG paths, 24x24 viewBox)
 ICONS = {
     "personal-training": "M12 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm-6 20v-6l-2-1 2-6h12l2 6-2 1v6h-3v-6h-6v6Z",
-    "gym-training": "M2 10h2V8h2v8H4v-2H2v-4Zm4-3h3v10H6V7Zm4 4h4v2h-4v-2Zm5-4h3v10h-3V7Zm3 1h2v2h2v4h-2v2h-2V8Z",
+    "fitness-training": "M2 10h2V8h2v8H4v-2H2v-4Zm4-3h3v10H6V7Zm4 4h4v2h-4v-2Zm5-4h3v10h-3V7Zm3 1h2v2h2v4h-2v2h-2V8Z",
     "mma-training": "M7 4h7a4 4 0 0 1 4 4v2a3 3 0 0 1-1 2.2V17a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-3H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1V5a1 1 0 0 1 1-1Zm1 3v4h7V8a1 1 0 0 0-1-1H8Z",
     "jeet-kune-do-martial-arts": "M14 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-3.5 5h4l3 3 3.5-1 .5 2-4.5 1.5-2-2-1 3 3 3v4.5h-2v-3.7l-3-2.8-1.5 3.5H4v-2h5.2L11 9.6l-1.8.8L7.5 13l-1.7-1 2-3.3Z",
     "boxing-kickboxing-fitness": "M8 3h6a5 5 0 0 1 5 5v3a4 4 0 0 1-2 3.5V19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-3H6a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3h1V4a1 1 0 0 1 1-1Zm1 2v6h2V5H9Z",
