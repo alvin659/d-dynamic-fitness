@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alvin659.github.io/d-dynamic-fitness/sitemap.xml
