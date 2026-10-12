@@ -27,8 +27,8 @@ BUSINESS = {
     "country": "KE",
     "street": "",  # PLACEHOLDER: leave empty for a service-area business, or add the gym's street address
     "postcode": "",  # PLACEHOLDER
-    "phone_display": "+254 700 000 000",  # PLACEHOLDER
-    "phone_e164": "+254700000000",  # PLACEHOLDER (also used for WhatsApp)
+    "phone_display": "0703 981 450",
+    "phone_e164": "+254703981450",  # also used for WhatsApp
     "email": "hello@ddynamicfitness.co.ke",  # PLACEHOLDER
     "site_url": "https://www.ddynamicfitness.co.ke",  # PLACEHOLDER: final domain, no trailing slash
     "geo": (-1.2921, 36.8219),  # Nairobi centre; replace with the gym's coordinates if it has one
