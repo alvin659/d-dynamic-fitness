@@ -385,7 +385,7 @@ def page_home():
     meta = ("Certified personal trainer in Nairobi. Fitness and weight training, MMA, aerobics, boxing, calisthenics, weight loss "
             "and kids martial arts with Coach Don Michael Ondiro. Book on WhatsApp.")
     general_faqs = FAQS[:5]
-    showcase = ["squats", "mma_speed", "one_arm", "jkd_kicks"]
+    showcase = ["squats", "mma_speed", "headstand", "jkd_kicks"]
     schema = [business_schema(), coach_schema(), website_schema(), faq_schema(general_faqs)] + [video_schema(k) for k in showcase] + [
         {"@type": "WebPage", "@id": B["site_url"] + "/#webpage", "url": B["site_url"] + "/", "name": title,
          "isPartOf": {"@id": B["site_url"] + "/#website"}, "about": {"@id": business_id()}, "dateModified": TODAY}]
@@ -780,7 +780,7 @@ def page_404():
 
 
 def sitemap_and_robots():
-    pages = {"": ["mma_speed", "one_arm", "jkd_kicks", "hundred"], "about.html": ["gym_endurance"], "services/index.html": []}
+    pages = {"": ["mma_speed", "headstand", "jkd_kicks", "hundred"], "about.html": ["gym_endurance"], "services/index.html": []}
     for s in SERVICES:
         pages[f"services/{s['slug']}.html"] = VIDEO_FOR.get(s["slug"], [])
     pages["areas/index.html"] = []

@@ -12,6 +12,7 @@ IMG = {
     "core": ("personal-trainer-nairobi-gym-core-training.jpg", "Personal trainer in Nairobi doing a core strength drill in the gym", 361, 640),
     "turf": ("calisthenics-push-up-training-nairobi.jpg", "Calisthenics push-up training on gym turf in Nairobi", 360, 640),
     "kick": ("jeet-kune-do-kick-training-nairobi.jpg", "Jeet Kune Do kick training session with a Nairobi martial arts coach", 361, 640),
+    "headstand": ("headstand-calisthenics-nairobi.jpg", "Coach Don holding a tripod headstand during calisthenics training in a Nairobi gym", 361, 640),
     "onearm": ("one-arm-push-up-calisthenics-nairobi.jpg", "One arm push-up calisthenics challenge on a Nairobi rooftop", 361, 640),
     "knuckle": ("bare-knuckle-push-up-challenge-nairobi.jpg", "Bare knuckle push-up challenge for martial arts conditioning in Nairobi", 361, 640),
     "squat": ("strength-training-client-squat-nairobi.jpg", "Personal training client squatting 60 kg during a strength session in Nairobi", 361, 640),
@@ -27,7 +28,7 @@ GALLERY = ["portrait", "curl", "kick", "squat", "onearm", "pads", "coach", "mobi
 # Main image for each training category
 CATEGORY_IMG = {
     "personal-training": "coach", "fitness-training": "curl", "mma-training": "mma_img", "aerobics-cardio": "shadow",
-    "jeet-kune-do-martial-arts": "kick", "boxing-kickboxing-fitness": "boxing_img", "calisthenics-training": "onearm",
+    "jeet-kune-do-martial-arts": "kick", "boxing-kickboxing-fitness": "boxing_img", "calisthenics-training": "headstand",
     "weight-loss-training": "rooftop", "strength-conditioning": "squat", "group-fitness": "partner",
     "kids-teens-fitness": "pads", "mobility-flexibility": "mobility",
 }

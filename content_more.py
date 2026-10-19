@@ -33,6 +33,9 @@ VIDEOS = {
     "gym_endurance": ("gym-strength-endurance-workout-nairobi", "Strength and endurance gym workout",
                       "Both physical and spiritual endurance are gifts from God. Take care of His temple. A gym strength and endurance session in Nairobi.",
                       "2025-09-12", "PT37S", "v"),
+    "headstand": ("headstand-calisthenics-training-nairobi", "Tripod headstand: balance, control and core strength",
+                  "Coach Don Michael Ondiro sets up a tripod on the mat, lifts into a full headstand with legs straight overhead, then lowers with control. Calisthenics skill training in a Nairobi gym.",
+                  "2026-10-19", "PT19S", "v"),
     "partner": ("partner-push-up-challenge-nairobi", "Partner push-up challenge (Hapa Pale)",
                 "Tag who you are trying this with. A fun partner push-up challenge for training with a friend.",
                 "2026-08-24", "PT33S", "v"),
@@ -47,7 +50,7 @@ VIDEO_FOR = {
     "aerobics-cardio": ["shadow"],
     "jeet-kune-do-martial-arts": ["jkd_kicks"],
     "boxing-kickboxing-fitness": ["mma_pads", "shadow"],
-    "calisthenics-training": ["one_arm", "variations"],
+    "calisthenics-training": ["headstand", "variations"],
     "weight-loss-training": ["hundred"],
     "strength-conditioning": ["squats", "gym_endurance"],
     "group-fitness": ["partner"],
@@ -57,7 +60,7 @@ VIDEO_FOR = {
 # Primary category for each video (used for the label on the Videos page)
 VIDEO_CATEGORY = {
     "squats": "fitness-training", "mma_speed": "mma-training", "mma_pads": "boxing-kickboxing-fitness",
-    "jkd_kicks": "jeet-kune-do-martial-arts", "shadow": "aerobics-cardio", "one_arm": "calisthenics-training",
+    "jkd_kicks": "jeet-kune-do-martial-arts", "shadow": "aerobics-cardio", "one_arm": "calisthenics-training", "headstand": "calisthenics-training",
     "variations": "calisthenics-training", "hundred": "weight-loss-training", "gym_vars": "fitness-training",
     "gym_endurance": "strength-conditioning", "partner": "group-fitness",
 }
