@@ -21,9 +21,6 @@ VIDEOS = {
     "one_arm": ("one-arm-push-up-both-arms-nairobi", "The perfect one-arm push-up challenge (both sides)",
                 "Straight down, straight up, both arms. Coach Don demonstrates strict one-arm push-ups on each side.",
                 "2026-09-24", "PT22S", "v"),
-    "variations": ("push-up-variations-calisthenics-nairobi", "Push-up variations to skyrocket your strength",
-                   "Once you can do regular push-ups well, progress to harder variations. Calisthenics push-up progressions demonstrated in Nairobi.",
-                   "2026-08-04", "PT39S", "h"),
     "hundred": ("100-push-up-challenge-nairobi", "0 to 100 push-up challenge",
                 "100 push-ups a day keeps your weakness away. Coach Don takes on the 0 to 100 push-up challenge.",
                 "2026-09-23", "PT57S", "v"),
@@ -50,7 +47,7 @@ VIDEO_FOR = {
     "aerobics-cardio": ["shadow"],
     "jeet-kune-do-martial-arts": ["jkd_kicks"],
     "boxing-kickboxing-fitness": ["mma_pads", "shadow"],
-    "calisthenics-training": ["headstand", "variations"],
+    "calisthenics-training": ["headstand", "one_arm"],
     "weight-loss-training": ["hundred"],
     "strength-conditioning": ["squats", "gym_endurance"],
     "group-fitness": ["partner"],
@@ -61,7 +58,7 @@ VIDEO_FOR = {
 VIDEO_CATEGORY = {
     "squats": "fitness-training", "mma_speed": "mma-training", "mma_pads": "boxing-kickboxing-fitness",
     "jkd_kicks": "jeet-kune-do-martial-arts", "shadow": "aerobics-cardio", "one_arm": "calisthenics-training", "headstand": "calisthenics-training",
-    "variations": "calisthenics-training", "hundred": "weight-loss-training", "gym_vars": "fitness-training",
+    "hundred": "weight-loss-training", "gym_vars": "fitness-training",
     "gym_endurance": "strength-conditioning", "partner": "group-fitness",
 }
 
